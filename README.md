@@ -46,6 +46,49 @@ Current JD technology stacks consist of these following microservices:
 - as collection schema
 - db: ocare_cda_directory, collection: directory_model_level 1 2 3, document: list of items
 
+- lab mapping system, each L3 item contains hospital and hospital code and name
+--- collection: 
+" 
+---- documents :
+{
+	"l3name": "name",
+	"l3code": "name",
+	"map": [{
+		"hospitalname": "cuhc",
+		"mapped_codename": [{
+			"code": "codeis",
+			"name": "nameis"
+		}, {
+			"code": "codeis",
+			"name": "nameis"
+		}]
+	}]
+}
+
+scenario 1 hosp
+1 lv3
+- query document in collection which code = and name =
+2. for i in map if hospital name == cuhc
+return list of
+{
+		"hospitalname": "cuhc",
+    "Uric acid": [
+      "C0320",
+      "C120",
+      "C1729"
+    ],
+	"stool color": [
+		"E1020"
+	]
+	}
+
+
+2.1 for i in hospital name =  'cuhc'
+
+
+
+- db: ocare_cda_directory, collection: directory_model_level 1 2 3, document: list of items
+
 2. CDA-model-expert
 - convert var .py to json
 - link json library (L2, library) to NoSQLDB
