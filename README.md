@@ -46,10 +46,112 @@ split branch to dev (JOE)
 - link json library (L123, Map items) to NoSQLDB
 - as collection schema
 - db: ocare_cda, collection: directory_level_1, document: list of items
+```
+ [
+  {
+    "Id": 1,
+    "Name": "ตรวจร่างกาย",
+    "NameEn": "Physical Examination",
+    "Acronym": "PE",
+    "DisplayOrder": 1
+  },
+  {
+    "Id": 3,
+    "Name": "ระบบเลือด",
+    "NameEn": "Hematology",
+    "Acronym": "HEME",
+    "DisplayOrder": 2
+  }
+ ]
+```
 - db: ocare_cda, collection: directory_level_2, document: list of items
+```
+ [
+  {
+    "Id": 1,
+    "Id_lv1": 2,
+    "Id_lv2": 1,
+    "Name": "การได้ยิน",
+    "NameEn": "Audiogram",
+    "Acronym": "(Audiogram)",
+    "Remark": "Audiog",
+    "Instruction": "",
+    "Status": "0",
+    "ValueMax": "1",
+    "ValueMin": "1",
+    "Unit": "",
+    "Price": "",
+    "DisplayOrder": 27,
+    "CallName": "Audiogram",
+    "OcareCode": "",
+    "Order": 412
+  },
+  {
+    "Id": 2,
+    "Id_lv1": 2,
+    "Id_lv2": 1,
+    "Name": "ประวัติการได้ยิน",
+    "NameEn": "Hearing History",
+    "Acronym": "(Hearing History)",
+    "Remark": "Hearing",
+    "Instruction": "",
+    "Status": "0",
+    "ValueMax": "",
+    "ValueMin": "",
+    "Unit": "",
+    "Price": "",
+    "DisplayOrder": 28,
+    "CallName": "HearingHi",
+    "OcareCode": "",
+    "Order": 413
+  }
+]
+```
 - db: ocare_cda, collection: directory_level_3, document: list of items
+```
+[
+	{
+    "Id": 640,
+    "Id_lv1": 2,
+    "Id_lv2": 9,
+    "Name": "กรดเมทิลฮิพพูริกในเลือด",
+    "NameEn": "Methyl Hippuric Acid in Blood",
+    "Acronym": "(Methyl Hippuric acid in Blood)",
+    "Remark": "Methyl Hippuric Acid in Blood",
+    "Instruction": "",
+    "Status": "1",
+    "ValueMax": "",
+    "ValueMin": "",
+    "Unit": "",
+    "Price": "",
+    "DisplayOrder": 41,
+    "CallName": "MethylHippuricAcidBlood",
+    "OcareCode": "",
+    "Order": 535
+  },
+  {
+  "Id": 641,
+  "Id_lv1": 2,
+  "Id_lv2": 9,
+  "Name": "แมงกานีสในปัสสาวะ",
+  "NameEn": "Manganese (Mn) in Urine",
+  "Acronym": "(Manganese (Mn) in Urine)",
+  "Remark": "Manganese (Mn) in Urine",
+  "Instruction": "",
+  "Status": "1",
+  "ValueMax": "3",
+  "ValueMin": "0",
+  "Unit": "ug/g.Creatinine",
+  "Price": "",
+  "DisplayOrder": 958,
+  "CallName": "ManganeseUrine",
+  "OcareCode": "",
+  "Order": 535
+  }
+]
+```
 - db: ocare_cda, collection: directory_level_3_upload_mapping, document: list of items
-
+```
 {
   "organization" : "nhealth",
   "item":
@@ -75,26 +177,7 @@ split branch to dev (JOE)
 		"V0726"
 	]
 }
-}
-
-XXXXXXXXX NO XXXXXXX
-dataprocess_api_map
----- documents :
-{
-	"name": "name",
-	"code": "name",
-	"map": [{
-		"hospitalname": "cuhc",
-		"mapped_codename": [{
-			"code": "codeis",
-			"name": "nameis"
-		}, {
-			"code": "codeis",
-			"name": "nameis"
-		}]
-	}]
-}
-
+```
 
 2. CDA-model-expert
 - convert var .py to json
