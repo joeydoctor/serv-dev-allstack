@@ -46,6 +46,11 @@ split branch to dev (JOE)
 - link json library (L123, Map items) to NoSQLDB
 - as collection schema
 - db: ocare_cda, collection: directory_level_1, document: list of items
+
+Tasks
+
+ CRUD item in: 
+- document: item, selected NameEn
 ```
  [
   {
@@ -65,6 +70,11 @@ split branch to dev (JOE)
  ]
 ```
 - db: ocare_cda, collection: directory_level_2, document: list of items
+
+Tasks
+
+ CRUD item in: 
+- document: item, selected NameEn
 ```
  [
   {
@@ -108,6 +118,11 @@ split branch to dev (JOE)
 ]
 ```
 - db: ocare_cda, collection: directory_level_3, document: list of items
+
+Tasks
+
+ CRUD item in: 
+- document: item, selected NameEn
 ```
 [
 	{
