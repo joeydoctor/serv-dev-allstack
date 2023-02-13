@@ -151,7 +151,14 @@ split branch to dev (JOE)
 ]
 ```
 - db: ocare_cda, collection: directory_level_3_upload_mapping, document: list of items
+
+Tasks
+
+ CRUD item in: 
+- collection
+- document: item, selected organization
 ```
+[
 {
   "organization" : "nhealth",
   "item":
@@ -177,20 +184,303 @@ split branch to dev (JOE)
 		"V0726"
 	]
 }
+]
 ```
 
 2. CDA-model-expert
 - convert var .py to json
 - link json library (L2, library) to NoSQLDB
 
-- db: ocare_cda, collection: model_expert_list_normal >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_normal
-- db: ocare_cda, collection: model_expert_list_abnormal >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_abnormal
-- db: ocare_cda, collection: model_expert_list_borderline >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_borderline
-- db: ocare_cda, collection: model_expert_list_notexamined >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_notexamined
+- db: ocare_cda, collection: model_expert_list_normal, document: list of items with tag item_lv2_NameEn
 
-- db: ocare_cda, collection: model_expert_l2 >>>_ ..., document: list of items with tag of item >>>> CRUD item in L3_ref
-- db: ocare_cda, collection: model_expert_l3 >>>_ ..., document: list of items with tag of item >>>> CRUD diseasecapture/ detail / interpret
+Tasks
 
+ CRUD item in: 
+- collection
+- document: item, selected item_lv2_nameen
+
+```
+[{
+	"item_lv2_nameen": "Cervical Cancer Screening",
+	"normal_list": [
+		"normal",
+		"ปกติ",
+		"unremarkable",
+		"notfound",
+		"adequate",
+		"negative",
+		"negativeforintraepitheliallesionormalignancy"
+	]
+}]
+```
+
+- db: ocare_cda, collection: model_expert_list_abnormal, document: list of items with tag item_lv2_NameEn
+
+Tasks
+
+ CRUD item in: 
+- collection
+- document: item, selected item_lv2_nameen
+
+```
+[{
+	"item_lv2_NameEn": "Cervical Cancer Screening",
+	"abnormal_list": [
+		"abnormal",
+		"ผิดปกติ",
+		"positive",
+		"พบเชลล์ผิดปกติควรพบแพทย์เพื่อวินิจฉัยเพิ่มเติม"
+	]
+}]
+```
+- db: ocare_cda, collection: model_expert_list_borderline, document: list of items with tag item_lv2_NameEn
+
+Tasks
+
+ CRUD item in: 
+- collection
+- document: item, selected item_lv2_nameen
+
+```
+[{
+	"item_lv2_NameEn": "Cervical Cancer Screening",
+	"borderline_list": [
+		"ผิดปกติเล็กน้อย",
+		"borderline"
+	]
+}]
+```
+- db: ocare_cda, collection: model_expert_list_notexamined, document: list of items with tag item_lv2_NameEn
+
+Tasks
+
+CRUD item in: 
+- collection
+- document: item, selected item_lv2_nameen
+
+```
+[{
+	"item_lv2_NameEn": "Cervical Cancer Screening",
+	"notexamined_list": [
+		"ไม่ตรวจ",
+		"ไม่มีผล",
+		"ไม่มีผลตรวจ",
+		"รอผลตรวจ",
+		"ไม่เข้ารับการตรวจ",
+		"ปฏิเสธการเจาะเลือด",
+		"ปฏิเสธตรวจ"
+	]
+}]
+```
+
+- db: ocare_cda, collection: model_expert_L2_recommend_dict, document: list of lv2 items
+
+Tasks
+
+CRUD item in:
+- collection
+- document: selected item_lv2_nameen; ie. diseasecapture,detail,interpret
+
+--- in diseasecapture CRUD dict item 
+----- name: CRUD th, en
+----- definition : CRUD disease, risk, nodiseae
+----- assessment: CRUD item in dict of disease, risk, nodisease
+
+--- in detail CRUD dict item 
+----- in each item consists of (undefined,notexamined,abnormal,normal in th, en)
+
+--- in interpret CRUD dict item 
+----- in each item consists of (undefined,notexamined,abnormal,normal in th, en)
+
+```
+[{
+	"item_lv2_NameEn": "Fasting Blood Sugar",
+    "diseasecapture": {
+        "Diabetes": {
+            "name": {"th": "โรคเบาหวาน", "en": "Diabetes"},
+            "definition": {
+                "disease": "เป็นโรคเบาหวาน",
+                "risk": "เสี่ยงโรคเบาหวาน",
+                "nodisease": "ไม่พบภาวะเบาหวาน",
+            },
+            "assessment": {
+                "disease": {
+                    "FBS": ["สูงกว่าปกติ","สูง"],
+                    "DTX": ["สูงกว่าปกติ","สูง"],
+                    "Estimated": ["สูงกว่าปกติ","สูง"],
+                    "HbA1C": ["สูงกว่าปกติ","สูง"]
+                },
+                "risk": {
+                    "FBS": ["เริ่มสูง"],
+                    "DTX": ["เริ่มสูง"],
+                    "Estimated": ["เริ่มสูง"],
+                    "HbA1C": ["เริ่มสูง"]
+                },
+                "nodisease": {
+                    "FBS": ["ปกติ","ต่ำกว่าปกติ"],
+                    "DTX": ["ปกติ","ต่ำกว่าปกติ"],
+                    "Estimated": ["ปกติ"],
+                    "HbA1C": ["ปกติ","ต่ำกว่าปกติ"]
+                },
+            },
+            "ref": "",
+        }
+    },
+    "detail": {
+        "diabetes": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "อาจจะมีภาวะเบาหวาน (Diabetes) </br>&nbsp; &nbsp; ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติมควรปรึกษาแพทย์เพื่อจะไน 5 ครั้งต่อสัปดาห์ (เช่น การเดินเร็ว) ",
+                "en": "High blood sugar than normal (in the Diabetes category), you should consult your doctor to maal activities that fit at least 30 minutes a day, five times a week (for example, brisk walking)."
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        },
+        "ifg": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) </br>&nbsp; &nbsp; ควรปรับเปลี่ยนพฤติกรรมการรับประทานอาหาร โดยลดอาหารประย่างต่อเนื่องอย่างน้อยปีละ 1 ครั้ง ",
+                "en": "Higher than normal blood sugar levels (Pre-diabetes). Should change dietary habits bnt options and for ongoing monitoring at least 1 year."
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        },
+        "hypoglycemia": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": " หากมีอาการผิดปกติ เช่น ใจสั่น มึนงง หน้ามืด ควรปรึกษาแพสมต่อไป",
+                "en": "Blood sugassess and continue to provide appropriate treatment."
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        },
+        "bloodsugar": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "",
+                "en": ""
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        }
+    },
+    "interpret": {
+        "diabetes": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในเกณฑ์เบาหวาน (Diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
+                "en": "Sugar levels in the blood are in the abnormal range."
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        },
+        "ifg": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
+                "en": "Higher than normal blood sugar levels (Pre-diabetes). "
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        },
+        "bloodsugar": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "",
+                "en": ""
+            },
+            "normal": {
+                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ปกติ",
+                "en": "Normal blood sugar  "
+            }
+        },
+        "hypoglycemia": {
+            "undefined": {
+                "th": "",
+                "en": ""
+            },
+            "notexamined": {
+                "th": "",
+                "en": ""
+            },
+            "abnormal": {
+                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ต่ำกว่าปกติ",
+                "en": "Low blood sugar  "
+            },
+            "normal": {
+                "th": "",
+                "en": ""
+            }
+        }
+    }
+}
+]
+```
+- db: ocare_cda, collection: model_expert_L3_ref >>>_ ..., document: list of items with tag of item >>>> CRUD diseasecapture/ detail / interpret
+
+```
+```
 
 - *** do try except to back up whwn cannont connect to db ***
 
