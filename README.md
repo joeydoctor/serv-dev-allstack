@@ -860,32 +860,3 @@ CRUD item in:
 	}
 }
 ```
-### New cda-allstack services (OS project)
-serv-cda-allstack to manage all tech stacks of JoeyDoctor technology (*** in Database layer)
-
-1.CDA-directory - systematic & itemized health items
- CRUD all except id
- listed by display orders of
-- L1
--- L2 (check if appears in expert, cda-ml)
---- L3 (check if appears in cda)
-
-2.CDA-model-expert
- Linked L2 from CDA - dataprocessor (if exist show button)
-  - CRUD item to list in document [normal_list, borderline_list, abnormal_list, notexamined_list]
-  - CRUD item to dict in document { L3_ref/ L2_recommend_dict - diseasecapture, detail, interpret}
-  - can view list and link to CRUD by CDA-model-expert itself
-
-3.CDA-model-ml model ref from expert/ ca
- Linked L2 from CDA - dataprocessor (if exist show button)
-  - CRUD collection of each model
-  - CRUD item to document in each model
-- link button to df/ to train
-- link button to Push model to Bucket/ Deletion
-- can view list and link to CRUD by CDA-model-ml
-
-4.CDA-model-clinical
- Linked L3 from CDA - dataprocessor (if exist show button)
-  - CRUD collection of each model
-  - CRUD item to document in each model
-  - can view list and link to CRUD by CDA-model-clinical itself
