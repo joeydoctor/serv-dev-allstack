@@ -1,44 +1,13 @@
 # serv-cda-allstack
 serv-cda-allstack to manage all tech stacks of JD technology
 
-## JoeyDoctor (JD) technology management platform
-Current JD technology stacks consist of these following microservices:
-
- Dataprocess-expert (tentative name change to CDA-directory)
-
-|-- model - port 5050 (map https://dataprocess.optimizecare.com, https://dataprocess.checkup.in.th/)
-
-|-- controllog - port 5053
-
- Expert (tentative name change to CDA-model-expert)
-
-|-- model - port 5000 (map https://expert.optimizecare.com)
-
-|-- controllog - port 5003 
-
- CDA-ml (tentative name change to CDA-model-ml)
-
-|-- model
-
-|-- controllog
-
- CDA (tentative name change to CDA-model-clinical)
-
-|-- gateway
-
-|-- summary
-
-|-- dataprocess-agent
-
-|-- controllog
-
 ## Current issues
 1. The repositories were not well designed for collaborative work, due to architecture designs, embeded libraries.
 2. There are no independent databases, all configs were embeded into the code.
 3. All codes need to be rebuilt each time there were some minor updates or patch.
 4. No single management platform to configure.
 
-## Solutions
+## TASKS
 
 ### 1. CDA-directory
 - db: ocare_cda, collection: directory_level_1, document: list of items
