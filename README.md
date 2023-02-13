@@ -33,26 +33,56 @@ Current JD technology stacks consist of these following microservices:
 |-- controllog
 
 ## Current issues
-1. The repositoroes were not well designed for collaborative work, due to architecture designs, embeded libraries.
+1. The repositories were not well designed for collaborative work, due to architecture designs, embeded libraries.
 2. There are no independent databases, all configs were embeded into the code.
 3. All codes need to be rebuilt each time there were some minor updates or patch.
 4. No single management platform to configure.
 
 ## Solutions
 ### Existing services
+split branch to dev (JOE)
 1. CDA-directory
 - convert var .py to json
 - link json library (L123, Map items) to NoSQLDB
 - as collection schema
-- db: ocare_cda_directory, collection: directory_model_level 1 2 3, document: list of items
+- db: ocare_cda, collection: directory_level_1, document: list of items
+- db: ocare_cda, collection: directory_level_2, document: list of items
+- db: ocare_cda, collection: directory_level_3, document: list of items
+- db: ocare_cda, collection: directory_level_3_upload_mapping, document: list of items
 
-- lab mapping system, each L3 item contains hospital and hospital code and name
---- collection: 
-" 
+{
+  "organization" : "nhealth",
+  "item":
+{
+	"HN": [
+		""
+	],
+	"FirstName": [
+		"EPVIS_GivenName"
+	],
+	"LastName": [
+		"EPVIS_Surname"
+	],
+	"IDCard": [
+		"EPVIS_PatientAddress1"
+	],
+	"Uric acid": [
+		"C0320",
+		"C120",
+		"C1729"
+	],
+	"Urine Amphetamine": [
+		"V0726"
+	]
+}
+}
+
+XXXXXXXXX NO XXXXXXX
+dataprocess_api_map
 ---- documents :
 {
-	"l3name": "name",
-	"l3code": "name",
+	"name": "name",
+	"code": "name",
 	"map": [{
 		"hospitalname": "cuhc",
 		"mapped_codename": [{
@@ -65,67 +95,59 @@ Current JD technology stacks consist of these following microservices:
 	}]
 }
 
-scenario 1 hosp
-1 lv3
-- query document in collection which code = and name =
-2. for i in map if hospital name == cuhc
-return list of
-{
-		"hospitalname": "cuhc",
-    "Uric acid": [
-      "C0320",
-      "C120",
-      "C1729"
-    ],
-	"stool color": [
-		"E1020"
-	]
-	}
-
-
-2.1 for i in hospital name =  'cuhc'
-
-
-
-- db: ocare_cda_directory, collection: directory_model_level 1 2 3, document: list of items
 
 2. CDA-model-expert
 - convert var .py to json
 - link json library (L2, library) to NoSQLDB
-- db: ocare_cda_expert, collection: expert_model_ a b c (normal, abn, bord, unde, L3, L3), document: list of items
+
+- db: ocare_cda, collection: model_expert_list_normal >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_normal
+- db: ocare_cda, collection: model_expert_list_abnormal >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_abnormal
+- db: ocare_cda, collection: model_expert_list_borderline >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_borderline
+- db: ocare_cda, collection: model_expert_list_notexamined >>>_ ..., document: list of items with tag of item >>>> CRUD item in list_notexamined
+
+- db: ocare_cda, collection: model_expert_l2 >>>_ ..., document: list of items with tag of item >>>> CRUD item in L3_ref
+- db: ocare_cda, collection: model_expert_l3 >>>_ ..., document: list of items with tag of item >>>> CRUD diseasecapture/ detail / interpret
+
+
+- *** do try except to back up whwn cannont connect to db ***
+
 3. CDA-model-ml
 
 - as collection schema
--  db: ocare_cda_ml, collection: ml_model_ a b c (Level 2 name), document: list of items
+-  db: ocare_cda, collection: model_ml a b c (Level 2 model name) >>>> not good to create model name as collection >>> pls gen model name in model.json and query???, document: list of items
+....  db: ocare_cda, collection: cda_model_ml  >>> _ ..., document: list of items with tag of model
 - link json library (L2, library) to NoSQLDB
 
 4. CDA-model-clinical
 - (done) call model from NoSQLDB
-- db: ocare_cda_clinical, collection: clinical_model_ ..., document: list of items
+- db: ocare_cda, collection: model_clinical >>>_ ..., document: list of items with tag of item
 
-### New cda-allstack services
+### New cda-allstack services (OS project)
 serv-cda-allstack to manage all tech stacks of JoeyDoctor technology (*** in Database layer)
 
 1.CDA-directory - systematic & itemized health items
- CRUD
+ CRUD all except id
  listed by display orders of
 - L1
--- L2 (check if there is expert, cda-ml)
---- L3 (check if there is cda)
+-- L2 (check if appears in expert, cda-ml)
+--- L3 (check if appears in cda)
 
 2.CDA-model-expert
  Linked L2 from CDA - dataprocessor (if exist show button)
   - CRUD item to list in document [normal_list, borderline_list, abnormal_list, notexamined_list]
   - CRUD item to dict in document { L3_ref/ L2_recommend_dict - diseasecapture, detail, interpret}
-  
+  - can view list and link to CRUD by CDA-model-expert itself
+
 3.CDA-model-ml model ref from expert/ ca
  Linked L2 from CDA - dataprocessor (if exist show button)
   - CRUD collection of each model
   - CRUD item to document in each model
 - link button to df/ to train
 - link button to Push model to Bucket/ Deletion
+- can view list and link to CRUD by CDA-model-ml
 
 4.CDA-model-clinical
  Linked L3 from CDA - dataprocessor (if exist show button)
   - CRUD collection of each model
   - CRUD item to document in each model
+  - can view list and link to CRUD by CDA-model-clinical itself
