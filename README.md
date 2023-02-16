@@ -277,187 +277,191 @@ CRUD item in:
 ----- in each item consists of (undefined,notexamined,abnormal,normal in th, en)
 
 ```
-[{
+[
+{
 	"item_lv2_NameEn": "Fasting Blood Sugar",
-    "diseasecapture": {
-        "Diabetes": {
-            "name": {"th": "โรคเบาหวาน", "en": "Diabetes"},
-            "definition": {
-                "disease": "เป็นโรคเบาหวาน",
-                "risk": "เสี่ยงโรคเบาหวาน",
-                "nodisease": "ไม่พบภาวะเบาหวาน",
-            },
-            "assessment": {
-                "disease": {
-                    "FBS": ["สูงกว่าปกติ","สูง"],
-                    "DTX": ["สูงกว่าปกติ","สูง"],
-                    "Estimated": ["สูงกว่าปกติ","สูง"],
-                    "HbA1C": ["สูงกว่าปกติ","สูง"]
-                },
-                "risk": {
-                    "FBS": ["เริ่มสูง"],
-                    "DTX": ["เริ่มสูง"],
-                    "Estimated": ["เริ่มสูง"],
-                    "HbA1C": ["เริ่มสูง"]
-                },
-                "nodisease": {
-                    "FBS": ["ปกติ","ต่ำกว่าปกติ"],
-                    "DTX": ["ปกติ","ต่ำกว่าปกติ"],
-                    "Estimated": ["ปกติ"],
-                    "HbA1C": ["ปกติ","ต่ำกว่าปกติ"]
-                },
-            },
-            "ref": "",
-        }
-    },
-    "detail": {
-        "diabetes": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "อาจจะมีภาวะเบาหวาน (Diabetes) </br>&nbsp; &nbsp; ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติมควรปรึกษาแพทย์เพื่อจะไน 5 ครั้งต่อสัปดาห์ (เช่น การเดินเร็ว) ",
-                "en": "High blood sugar than normal (in the Diabetes category), you should consult your doctor to maal activities that fit at least 30 minutes a day, five times a week (for example, brisk walking)."
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        },
-        "ifg": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) </br>&nbsp; &nbsp; ควรปรับเปลี่ยนพฤติกรรมการรับประทานอาหาร โดยลดอาหารประย่างต่อเนื่องอย่างน้อยปีละ 1 ครั้ง ",
-                "en": "Higher than normal blood sugar levels (Pre-diabetes). Should change dietary habits bnt options and for ongoing monitoring at least 1 year."
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        },
-        "hypoglycemia": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": " หากมีอาการผิดปกติ เช่น ใจสั่น มึนงง หน้ามืด ควรปรึกษาแพสมต่อไป",
-                "en": "Blood sugassess and continue to provide appropriate treatment."
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        },
-        "bloodsugar": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "",
-                "en": ""
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        }
-    },
-    "interpret": {
-        "diabetes": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในเกณฑ์เบาหวาน (Diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
-                "en": "Sugar levels in the blood are in the abnormal range."
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        },
-        "ifg": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
-                "en": "Higher than normal blood sugar levels (Pre-diabetes). "
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        },
-        "bloodsugar": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "",
-                "en": ""
-            },
-            "normal": {
-                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ปกติ",
-                "en": "Normal blood sugar  "
-            }
-        },
-        "hypoglycemia": {
-            "undefined": {
-                "th": "",
-                "en": ""
-            },
-            "notexamined": {
-                "th": "",
-                "en": ""
-            },
-            "abnormal": {
-                "th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ต่ำกว่าปกติ",
-                "en": "Low blood sugar  "
-            },
-            "normal": {
-                "th": "",
-                "en": ""
-            }
-        }
-    }
+	"diseasecapture": {
+		"Diabetes": {
+			"name": {
+				"th": "โรคเบาหวาน",
+				"en": "Diabetes"
+			},
+			"definition": {
+				"disease": "เป็นโรคเบาหวาน",
+				"risk": "เสี่ยงโรคเบาหวาน",
+				"nodisease": "ไม่พบภาวะเบาหวาน"
+			},
+			"assessment": {
+				"disease": {
+					"FBS": ["สูงกว่าปกติ", "สูง"],
+					"DTX": ["สูงกว่าปกติ", "สูง"],
+					"Estimated": ["สูงกว่าปกติ", "สูง"],
+					"HbA1C": ["สูงกว่าปกติ", "สูง"]
+				},
+				"risk": {
+					"FBS": ["เริ่มสูง"],
+					"DTX": ["เริ่มสูง"],
+					"Estimated": ["เริ่มสูง"],
+					"HbA1C": ["เริ่มสูง"]
+				},
+				"nodisease": {
+					"FBS": ["ปกติ", "ต่ำกว่าปกติ"],
+					"DTX": ["ปกติ", "ต่ำกว่าปกติ"],
+					"Estimated": ["ปกติ"],
+					"HbA1C": ["ปกติ", "ต่ำกว่าปกติ"]
+				}
+			},
+			"ref": ""
+		}
+	},
+	"detail": {
+		"diabetes": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "อาจจะมีภาวะเบาหวาน (Diabetes) </br>&nbsp; &nbsp; ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติมควรปรึกษาแพทย์เพื่อจะไน 5 ครั้งต่อสัปดาห์ (เช่น การเดินเร็ว) ",
+				"en": "High blood sugar than normal (in the Diabetes category), you should consult your doctor to maal activities that fit at least 30 minutes a day, five times a week (for example, brisk walking)."
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		},
+		"ifg": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) </br>&nbsp; &nbsp; ควรปรับเปลี่ยนพฤติกรรมการรับประทานอาหาร โดยลดอาหารประย่างต่อเนื่องอย่างน้อยปีละ 1 ครั้ง ",
+				"en": "Higher than normal blood sugar levels (Pre-diabetes). Should change dietary habits bnt options and for ongoing monitoring at least 1 year."
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		},
+		"hypoglycemia": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": " หากมีอาการผิดปกติ เช่น ใจสั่น มึนงง หน้ามืด ควรปรึกษาแพสมต่อไป",
+				"en": "Blood sugassess and continue to provide appropriate treatment."
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		},
+		"bloodsugar": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "",
+				"en": ""
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		}
+	},
+	"interpret": {
+		"diabetes": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในเกณฑ์เบาหวาน (Diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
+				"en": "Sugar levels in the blood are in the abnormal range."
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		},
+		"ifg": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ผิดปกติ อยู่ในกลุ่มเสี่ยงเบาหวาน (Pre-diabetes) ควรปรึกษาแพทย์เพื่อตรวจเพิ่มเติม",
+				"en": "Higher than normal blood sugar levels (Pre-diabetes). "
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		},
+		"bloodsugar": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "",
+				"en": ""
+			},
+			"normal": {
+				"th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ปกติ",
+				"en": "Normal blood sugar  "
+			}
+		},
+		"hypoglycemia": {
+			"undefined": {
+				"th": "",
+				"en": ""
+			},
+			"notexamined": {
+				"th": "",
+				"en": ""
+			},
+			"abnormal": {
+				"th": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ต่ำกว่าปกติ",
+				"en": "Low blood sugar  "
+			},
+			"normal": {
+				"th": "",
+				"en": ""
+			}
+		}
+	}
 }
 ]
 ```
