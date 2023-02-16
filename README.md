@@ -471,7 +471,7 @@ CRUD item in:
 - document: selected item_lv3_nameen; ie. min max (m/ f),itp,define, assess, stage, unit, normal, dict (th/ en)
 
 ```
-[
+[{
 	{
     "FBS": {
         "min3": {
@@ -612,7 +612,9 @@ CRUD item in:
                  "undefined": ""
              }
         }
+    }
     },
+    {
     "DTX": {
         "min3": {
             "m": "",
@@ -752,6 +754,7 @@ CRUD item in:
                  "undefined": ""
              }
         }
+    }
     }
 ]
 ```
