@@ -476,290 +476,144 @@ CRUD item in:
 - document: selected item_lv3_nameen; ie. min max (m/ f),itp,define, assess, stage, unit, normal, dict (th/ en)
 
 ```
-[{
-	{
-    "FBS": {
-        "min3": {
-            "m": "",
-            "f": ""
-        },
-        "min2": {
-            "m": "",
-            "f": ""
-        },
-        "min1": {
-            "m": "",
-            "f": ""
-        },
-        "min": {
-            "m": "70",
-            "f": "70"
-        },
-        "max3": {
-            "m": "",
-            "f": ""
-        },
-        "max2": {
-            "m": "",
-            "f": ""
-        },
-        "max1": {
-            "m": "",
-            "f": ""
-        },
-        "max": {
-            "m": "110",
-            "f": "110"
-        },
-        "tmin": {
-            "m": "",
-            "f": ""
-        },
-        "tmax": {
-            "m": "126",
-            "f": "126"
-        },
-        "itp": {
-            "normal": "",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "",
-            "overt": "เริ่มสูง",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "",
-            "undert": ""
-        },
-        "define": {
-            "normal": "",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "",
-            "overt": "abnormal",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "",
-            "undert": ""
-        },
-        "assess": {
-            "normal": "น้ำตาลปกติ",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "มีภาวะเบาหวาน",
-            "overt": "เสี่ยงเบาหวาน",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "น้ำตาลต่ำ",
-            "undert": ""
-        },
-        "stage":  {
-            "normal": "0",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "2",
-            "overt": "1",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "-1",
-            "undert": ""
-        },
-        "unit": "mg/dL",
-        "normal": "",
-        "dict": {
-            "th": {
-                                "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "ระดับน้ำตาลในเลือดต่ำกว่าเกณฑ์ปกติ",
-                "undert": "",
-                "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "ระดับน้ำตาลในเลือดสูงกว่าเกณฑ์ปกติ",
-                "overt": "ระดับน้ำตาลในเลือดสูงกว่าเกณฑ์ปกติ",
-                "borderline": "",
-                "normal": "ระดับน้ำตาลในเลือดอยู่ในเกณฑ์ปกติ",
-                "abnormal": "",
-                "notexamined": "",
-                "undefined": ""
-            },
-            "en": {
-                                 "under3": "",
-                 "under2": "",
-                 "under1": "",
-                 "under": "The blood sugar level is below normal",
-                 "undert": "",
-                 "over3": "",
-             "over2": "",
-             "over1": "",
-             "over": "The blood sugar level is above normal",
-                 "overt": "The blood sugar level is above normal",
-                 "borderline": "",
-                 "normal": "The blood sugar level is normal",
-                 "abnormal": "",
-                 "notexamined": "",
-                 "undefined": ""
-             }
-        }
-    }
-    },
+[
     {
-    "DTX": {
-        "min3": {
-            "m": "",
-            "f": ""
-        },
-        "min2": {
-            "m": "",
-            "f": ""
-        },
-        "min1": {
-            "m": "",
-            "f": ""
-        },
-        "min": {
-            "m": "70",
-            "f": "70"
-        },
-        "max3": {
-            "m": "",
-            "f": ""
-        },
-        "max2": {
-            "m": "",
-            "f": ""
-        },
-        "max1": {
-            "m": "",
-            "f": ""
-        },
-        "max": {
-            "m": "110",
-            "f": "110"
-        },
-        "tmin": {
-            "m": "",
-            "f": ""
-        },
-        "tmax": {
-            "m": "126",
-            "f": "126"
-        },
-        "itp": {
-            "normal": "",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "",
-            "overt": "เริ่มสูง",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "",
-            "undert": ""
-        },
-        "define": {
-            "normal": "",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "",
-            "overt": "abnormal",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "",
-            "undert": ""
-        },
-        "assess": {
-            "normal": "น้ำตาลปกติ",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "มีภาวะเบาหวาน",
-            "overt": "เสี่ยงเบาหวาน",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "น้ำตาลต่ำ",
-            "undert": ""
-        },
-        "stage":  {
-            "normal": "0",
-            "abnormal": "",
-            "borderline": "",
-            "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "2",
-            "overt": "1",
-                            "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "-1",
-            "undert": ""
-        },
-        "unit": "mg/dL",
-        "normal": "",
-        "dict": {
-            "th": {
-                                "under3": "",
-                "under2": "",
-                "under1": "",
-                "under": "ระดับน้ำตาลในเลือดปลายนิ้วต่ำกว่าเกณฑ์ปกติ",
-                "undert": "",
-                "over3": "",
-            "over2": "",
-            "over1": "",
-            "over": "ระดับน้ำตาลในเลือดปลายนิ้วสูงกว่าเกณฑ์ปกติ",
-                "overt": "ระดับน้ำตาลในเลือดปลายนิ้วสูงกว่าเกณฑ์ปกติ",
-                "borderline": "",
-                "normal": "ระดับน้ำตาลในเลือดปลายนิ้วอยู่ในเกณฑ์ปกติ",
-                "abnormal": "",
-                "notexamined": "",
-                "undefined": ""
+        "item_lv3_NameEn":"ABI",
+        "item": {
+            "priority": {
+                "set": "abnormalfirst",
+                "nlp": {'enable':'1',
+                            'path':'c:/services/serv-expert/app/',
+                            'modelname':'abi',
+                            'model_list':['abi','abivalue','elasticity']}
             },
-            "en": {
-                                 "under3": "",
-                 "under2": "",
-                 "under1": "",
-                 "under": "The fingertip blood sugar level is below normal",
-                 "undert": "",
-                 "over3": "",
-             "over2": "",
-             "over1": "",
-             "over": "The fingertip blood sugar level is higher than normal.",
-                 "overt": "fingertip blood sugar levels are above normal",
-                 "borderline": "",
-                 "normal": "The fingertip blood sugar level is normal.",
-                 "abnormal": "",
-                 "notexamined": "",
-                 "undefined": ""
-             }
+            "min3": {
+                "m": "",
+                "f": ""
+            },
+            "min2": {
+                "m": "",
+                "f": ""
+            },
+            "min1": {
+                "m": "",
+                "f": ""
+            },
+            "min": {"m": "", "f": ""},
+            "max3": {
+                "m": "",
+                "f": ""
+            },
+            "max2": {
+                "m": "",
+                "f": ""
+            },
+            "max1": {
+                "m": "",
+                "f": ""
+            },
+            "max": {"m": "", "f": ""},
+            "tmin": {"m": "", "f": ""},
+            "tmax": {"m": "", "f": ""},
+            "itp": {
+                "normal": "",
+                "abnormal": "",
+                "borderline": "",
+                "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "",
+                "overt": "",
+                                "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "",
+                "undert": ""
+            },
+            "define": {
+                "normal": "normal",
+                "abnormal": "",
+                "borderline": "normal",
+                "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "normal",
+                "overt": "normal",
+                                "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "abnormal",
+                "undert": "abnormal"
+            },
+            "assess": {
+                "normal": "",
+                "abnormal": "",
+                "borderline": "",
+                "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "",
+                "overt": "",
+                                "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "",
+                "undert": ""
+            },
+            "stage":  {
+                "normal": "",
+                "abnormal": "",
+                "borderline": "",
+                "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "",
+                "overt": "",
+                                "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "",
+                "undert": ""
+            },
+            "unit": "",
+            "normal": "",
+            "dict": {
+                "th": {
+                                    "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "",
+                    "undert": "",
+                    "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "",
+                    "overt": "",
+                    "borderline": "ผลการตรวจสมรรถภาพการไหลเวียนของเส้นเลือด (ABI) โดยเปรียบเทียบความดันโลหิตระหว่างหลอดเลือดแดงที่แขน (Brachial Artery) และหลอดเลือดแดงที่ขาบริเวณข้อเท้า (Ankle) ก้ำกึ่งผิดปกติ",
+                    "normal": "ผลการตรวจสมรรถภาพการไหลเวียนของเส้นเลือด (ABI) โดยเปรียบเทียบความดันโลหิตระหว่างหลอดเลือดแดงที่แขน (Brachial Artery) และหลอดเลือดแดงที่ขาบริเวณข้อเท้า (Ankle) ปกติ",
+                    "abnormal": "ผลการตรวจสมรรถภาพการไหลเวียนของเส้นเลือด (ABI) โดยเปรียบเทียบความดันโลหิตระหว่างหลอดเลือดแดงที่แขน (Brachial Artery) และหลอดเลือดแดงที่ขาบริเวณข้อเท้า (Ankle) พบความผิดปกติ",
+                    "notexamined": "",
+                    "undefined": "",
+                },
+                "en": {
+                                    "under3": "",
+                    "under2": "",
+                    "under1": "",
+                    "under": "",
+                    "undert": "",
+                    "over3": "",
+                "over2": "",
+                "over1": "",
+                "over": "",
+                    "overt": "",
+                    "borderline": "The results of the blood flow function test (ABI) were slightly abnormal.",
+                    "normal": "The results of the blood flow function test (ABI) were normal.",
+                    "abnormal": "The results of the blood flow function (ABI) test revealed abnormalities. It is recommended to consult a doctor. for further examination",
+                    "notexamined": "",
+                    "undefined": "",
+                }
+            }
         }
-    }
     }
 ]
 ```
