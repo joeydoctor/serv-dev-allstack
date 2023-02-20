@@ -168,10 +168,9 @@ Tasks
 ```
 
 ### 2. CDA-model-expert
-- convert var .py to json
 - link json library (L2, library) to NoSQLDB
 
-- db: ocare_cda, collection: model_expert_list, document: list of items with tag item_lv2_NameEn and normal_list/ borderline_list/ abnormal_list/ notexamined_list
+- db: ocare_cda, collection: model_expert_L2_ref, document: list of items with tag item_lv2_NameEn and normal_list/ borderline_list/ abnormal_list/ notexamined_list
 
 Tasks
 
