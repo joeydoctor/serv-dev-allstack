@@ -171,7 +171,7 @@ Tasks
 - convert var .py to json
 - link json library (L2, library) to NoSQLDB
 
-- db: ocare_cda, collection: model_expert_list_normal, document: list of items with tag item_lv2_NameEn
+- db: ocare_cda, collection: model_expert_list, document: list of items with tag item_lv2_NameEn and normal_list/ borderline_list/ abnormal_list/ notexamined_list
 
 Tasks
 
@@ -180,77 +180,29 @@ Tasks
 - document: item, selected item_lv2_nameen
 
 ```
-[{
-	"item_lv2_nameen": "Cervical Cancer Screening",
-	"normal_list": [
-		"normal",
-		"ปกติ",
-		"unremarkable",
-		"notfound",
-		"adequate",
-		"negative",
-		"negativeforintraepitheliallesionormalignancy"
-	]
-}]
-```
-
-- db: ocare_cda, collection: model_expert_list_abnormal, document: list of items with tag item_lv2_NameEn
-
-Tasks
-
- CRUD item in: 
-- collection
-- document: item, selected item_lv2_nameen
-
-```
-[{
-	"item_lv2_NameEn": "Cervical Cancer Screening",
-	"abnormal_list": [
-		"abnormal",
-		"ผิดปกติ",
-		"positive",
-		"พบเชลล์ผิดปกติควรพบแพทย์เพื่อวินิจฉัยเพิ่มเติม"
-	]
-}]
-```
-- db: ocare_cda, collection: model_expert_list_borderline, document: list of items with tag item_lv2_NameEn
-
-Tasks
-
- CRUD item in: 
-- collection
-- document: item, selected item_lv2_nameen
-
-```
-[{
-	"item_lv2_NameEn": "Cervical Cancer Screening",
-	"borderline_list": [
-		"ผิดปกติเล็กน้อย",
-		"borderline"
-	]
-}]
-```
-- db: ocare_cda, collection: model_expert_list_notexamined, document: list of items with tag item_lv2_NameEn
-
-Tasks
-
-CRUD item in: 
-- collection
-- document: item, selected item_lv2_nameen
-
-```
-[{
-	"item_lv2_NameEn": "Cervical Cancer Screening",
-	"notexamined_list": [
-		"ไม่ตรวจ",
-		"ไม่มีผล",
-		"ไม่มีผลตรวจ",
-		"รอผลตรวจ",
-		"ไม่เข้ารับการตรวจ",
-		"ปฏิเสธการเจาะเลือด",
-		"ปฏิเสธตรวจ"
-	]
-}]
+[
+    {
+        "item_lv2_nameen": "ABI",
+        "normal_list": [
+            "nodetectableabnormality",
+            "noabnormality"
+        ],
+        "borderline_list": [
+            "ผิดปกติเล็กน้อย",
+            "borderline"
+        ],
+        "abnormal_list": [
+            "abnormalstudy"
+        ],
+        "notexamined_list": [
+            "ไม่ตรวจ",
+            "ไม่มีผลตรวจ",
+            "ไม่เข้ารับการตรวจ",
+            "ปฏิเสธการตรวจ",
+            "ปฏิเสธตรวจ"
+        ]
+    }
+]
 ```
 
 - db: ocare_cda, collection: model_expert_L2_recommend_dict, document: list of lv2 items
