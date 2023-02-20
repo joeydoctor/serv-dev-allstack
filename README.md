@@ -582,8 +582,15 @@ CRUD item in:
 
 ```
 [{
-		"item_lv3_NameEn": "Chest X-Ray",
-		"label": "cxr","label_name": {"th":"label_th","en":"label_en"},"group": "chest","category_codes": {
+		"item_lv3_NameEn": "ABI",
+		"modelname": "abi",
+		"label": "abi",
+		"label_name": {
+			"th": "label_th",
+			"en": "label_en"
+		},
+		"group": "abi",
+		"category_codes": {
 			"0": "0",
 			"1": "1",
 			"9": "9",
@@ -592,14 +599,21 @@ CRUD item in:
 		"column": "interpret"
 	},
 	{
-		"item_lv3_NameEn": "Chest X-Ray",
-		"label": "heart","label_name": {"th":"label_th","en":"label_en"},"group": "chest","category_codes": {
+		"item_lv3_NameEn": "ABI",
+		"modelname": "abi",
+		"label": "abivalue",
+		"label_name": {
+			"th": "label_th",
+			"en": "label_en"
+		},
+		"group": "abi",
+		"category_codes": {
 			"0": "0",
 			"1": "1",
 			"9": "9",
 			"10": "10"
 		},
-		"column": "heart"
+		"column": "abivalue"
 	}]
 ```
 
