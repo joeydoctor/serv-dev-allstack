@@ -26,7 +26,7 @@ System architecture
 ---- expert-model (*** run on Cloud run serverless ***)
 
 -- serv-CDA-model-clinical 
----- cda-controllog
+---- cda-controllog (*** run on Cloud run serverless ***)
 ---- cda-gateway
 ---- cda-summary (*** run on Cloud run serverless ***)
 ---- cda-dataprocess-agent
