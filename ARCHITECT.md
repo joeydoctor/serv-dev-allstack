@@ -1,10 +1,11 @@
 JoetyDoctor Technology
-consists of 4 major microservices
+consists of 4 major and 2 minor microservices
 
 ### 1. serv-CDA-directory 
 ### 2. serv-CDA-model-expert
 ### 3. serv-CDA-model-clinical
 ### 4. serv-CDA-model-ml
+
 ### 5. serv-CDA-credential
 ### 6. serv-cda-allstack (management)
 
