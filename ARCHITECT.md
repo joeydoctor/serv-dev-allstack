@@ -14,8 +14,8 @@ consists of 4 major and 2 minor microservices
 
 System architecture
 2 main servers
-- Ubuntu server (use to store logs, event, no-need to scale app)
-- Cloud run (use for application which needs autoscale)
+- server - Ubuntu GCP (use to store logs, event, no-need to scale app)
+- serverless - Cloudrun (use for application which needs autoscale)
 
 -- serv-CDA-directory 
 ---- dataprocess-controllog
@@ -28,9 +28,12 @@ System architecture
 -- serv-CDA-model-clinical 
 ---- cda-controllog
 ---- cda-gateway
----- cda-summary
+---- cda-summary (*** run on Cloud run serverless ***)
 ---- cda-dataprocess-agent
 
--- serv-CDA-model-expert 
----- cda-ml-bucket
----- cda-ml-model
+-- serv-CDA-model-ml 
+---- cda-ml-bucket (*** run on Cloud run serverless ***)
+---- cda-ml-model (*** run on Cloud run serverless ***)
+
+
+7. serv-www >> move to micro server 1 cpu
