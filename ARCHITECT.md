@@ -1,4 +1,4 @@
-JoetyDoctor Technology
+## JoetyDoctor Technology
 consists of 4 major and 2 minor microservices
 
 ### 1. serv-CDA-directory 
@@ -6,10 +6,9 @@ consists of 4 major and 2 minor microservices
 ### 3. serv-CDA-model-clinical
 ### 4. serv-CDA-model-ml
 
-### 5. serv-CDA-credential
-### 6. serv-cda-allstack (management)
 
-serv-cda-allstack to manage all tech stacks of JD technology
+### 5. serv-CDA-credential (to control credential of healthdashboard cuhc)
+### 6. serv-CDA-allstack (to manage all tech stacks of JD technology)
 
 - each microservice has its own log system which runs on gcp cloud server
 
